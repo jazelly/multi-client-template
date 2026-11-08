@@ -21,6 +21,7 @@ pnpm desktop      # Electron window onto http://localhost:5173 (APP_URL to chang
 pnpm mobile       # Expo; press w for web, i for the iOS simulator
 pnpm typecheck
 pnpm build        # design check, typecheck and build of apps/web
+pnpm iac:validate # check iac.json and its environment routing, offline
 pnpm iac:render   # render Terraform from iac.json into .vertile/
 ```
 
@@ -63,6 +64,8 @@ then screens in `apps/web` and `apps/mobile`. Delete notes once you have your ow
 - One version of each shared dependency, set in the `catalog` of `pnpm-workspace.yaml`. Upgrade React and React
   Native together with the Expo SDK (`npx expo install --check` in `apps/mobile`).
 - Never commit real secrets: `.env` files are ignored, `.env.example` holds development-only values.
+- `iac.json` (manifest version 2) holds deployment intent and non-secret values only. Secrets for staging and
+  production go in `.iac/private.json`, which `pnpm iac:scaffold` creates and git ignores.
 - Code, comments, identifiers and UI text are in English.
 
 ## Web design tokens

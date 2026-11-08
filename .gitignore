@@ -10,3 +10,4 @@ apps/mobile/android/
 .iac/
 .DS_Store
 *.log
+/.iac/private.json

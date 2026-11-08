@@ -31,7 +31,8 @@ pnpm mobile    # Expo: w for web, i for the iOS simulator
 - `apps/desktop` — Electron window onto the web app.
 - `apps/mobile` — Expo app that signs in through the server's hosted page and calls the API with bearer tokens.
 - `packages/shared` — types and the permission rules shared by the server and every client.
-- `iac.json` — projects, environments and database for `@vertile-ai/iac` (`pnpm iac:render`).
+- `iac.json` — projects, environments and database for `@vertile-ai/iac` (manifest version 2;
+  `pnpm iac:validate`, `pnpm iac:render`).
 
 [AGENTS.md](AGENTS.md) explains how sign-in and permissions work, how to add a feature, and the rules for working in
 the repository.
@@ -45,7 +46,8 @@ gh repo create my-app --template jazelly/multi-client-template --private --clone
 ```
 
 Then rename `multi-client-template`, the app scheme `multiclient` (`apps/mobile/app.json`, `MOBILE_CLIENT` in
-`apps/server/src/auth.ts`), and set your Vercel team in `iac.json`.
+`apps/server/src/auth.ts`), set `repository` and the Vercel team in `iac.json`, and run `pnpm iac:scaffold` to create
+the git-ignored `.iac/private.json` for deployment secrets.
 
 ## Not included
 

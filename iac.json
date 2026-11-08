@@ -1,14 +1,15 @@
 {
   "$schema": "./node_modules/@vertile-ai/iac/schema/iac.schema.json",
-  "version": 1,
-  "project": {
-    "key": "multi-client-template",
-    "name": "multi-client-template"
+  "version": 2,
+  "repository": "jazelly/multi-client-template",
+  "environments": {
+    "development": { "files": [".env"] },
+    "staging": { "files": [".env.staging"] },
+    "production": { "files": [".env.production"] }
   },
-  "environments": ["development", "staging", "production"],
   "providers": {
     "vercel": {
-      "teamSlug": "your-team",
+      "team": "your-team",
       "projectDefaults": { "nodeVersion": "24.x" }
     }
   },
@@ -29,14 +30,6 @@
       "rootDirectory": "apps/server"
     }
   ],
-  "env": {
-    "sourceDir": "apps",
-    "environments": {
-      "development": { "files": [".env"], "strict": false },
-      "staging": { "files": [".env.staging"] },
-      "production": { "files": [".env.production"] }
-    }
-  },
   "databases": [
     {
       "key": "main",

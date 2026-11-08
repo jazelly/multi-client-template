@@ -30,8 +30,8 @@ importers:
   .:
     devDependencies:
       '@vertile-ai/iac':
-        specifier: 0.2.1
-        version: 0.2.1
+        specifier: 0.3.0
+        version: 0.3.0
 
   apps/desktop:
     devDependencies:
@@ -1728,8 +1728,8 @@ packages:
   '@ungap/structured-clone@1.4.0':
     resolution: {integrity: sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ==}
 
-  '@vertile-ai/iac@0.2.1':
-    resolution: {integrity: sha512-STfQKTvMOXce++Hhvk83SaFIL/7hSmkzg4BuO3azI61I0kv/j5Mzudcu4og0KDfNORuPttIZ++5Uq2O8y3DHUA==}
+  '@vertile-ai/iac@0.3.0':
+    resolution: {integrity: sha512-f8gp7BH0/tAYsQTHSCRApZPMy2pMvU2QTYEgfjksw5PSB/lusHpDBl7M+Fmnb0gfVQscg9Np8DReba7nj4SHIA==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -5446,7 +5446,7 @@ snapshots:
 
   '@ungap/structured-clone@1.4.0': {}
 
-  '@vertile-ai/iac@0.2.1': {}
+  '@vertile-ai/iac@0.3.0': {}
 
   '@vitejs/plugin-react@6.0.2(babel-plugin-react-compiler@1.0.0)(vite@8.0.16(@types/node@24.12.2)(esbuild@0.27.7)(jiti@2.7.0)(terser@5.51.2)(tsx@4.21.0))':
     dependencies:

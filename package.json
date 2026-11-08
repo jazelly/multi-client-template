@@ -12,9 +12,11 @@
     "mobile": "pnpm --filter mobile start",
     "build": "pnpm --filter web build",
     "typecheck": "pnpm -r --parallel typecheck",
+    "iac:scaffold": "vertile-iac scaffold --repo-root .",
+    "iac:validate": "vertile-iac validate --repo-root .",
     "iac:render": "vertile-iac render --target=vercel --env=production"
   },
   "devDependencies": {
-    "@vertile-ai/iac": "0.2.1"
+    "@vertile-ai/iac": "0.3.0"
   }
 }
