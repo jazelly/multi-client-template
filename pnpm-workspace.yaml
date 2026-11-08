@@ -1,0 +1,17 @@
+packages:
+  - apps/*
+  - packages/*
+
+# One version of each shared dependency for every app. Expo pins React and React Native, so upgrade them together
+# with the Expo SDK (npx expo install --check in apps/mobile).
+catalog:
+  react: 19.3.0
+  react-dom: 19.3.0
+  '@types/react': 19.3.0
+  '@types/react-dom': 19.3.0
+  '@types/node': 24.12.2
+  typescript: 6.0.3
+
+onlyBuiltDependencies:
+  - electron
+  - esbuild

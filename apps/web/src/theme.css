@@ -1,0 +1,69 @@
+/*
+ * Design tokens and Tailwind utilities.
+ *
+ * Every colour, type size, radius and shadow the app uses is defined here, once. Write UI with the semantic
+ * utilities these generate (bg-surface, text-muted, border-line, text-sm, rounded-md, gap-2 …). Tailwind's default
+ * palette and type scale are switched off, so text-gray-500 or text-[13px] style guesses do not exist, and
+ * scripts/check-design.mjs fails the build on hex colours and arbitrary values outside this file.
+ */
+@import 'tailwindcss';
+
+/* Electron window, set on <html> in main.tsx */
+@custom-variant desktop (&:where(.is-desktop, .is-desktop *));
+
+@theme {
+  --color-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --font-*: initial;
+
+  --spacing: 4px;
+
+  --color-canvas: #f4f4f2; /* app background */
+  --color-surface: #ffffff; /* panels, inputs */
+  --color-surface-2: #f8f8f6; /* quiet fills, hover */
+  --color-line: #d7d8d4; /* borders */
+  --color-fg: #17181a; /* primary text */
+  --color-muted: #5f6368; /* hints, metadata */
+  --color-primary: #2457d6; /* main action */
+  --color-on-primary: #ffffff;
+  --color-bad: #b3261e; /* errors, delete */
+
+  --text-sm: 12px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-2xl: 22px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.06); /* note list, sign-in card */
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-canvas: #121314;
+    --color-surface: #1c1d1f;
+    --color-surface-2: #242528;
+    --color-line: #34363a;
+    --color-fg: #ececea;
+    --color-muted: #a2a5a9;
+    --color-primary: #7ea2ff;
+    --color-on-primary: #0b1a3d;
+    --color-bad: #ff8a80;
+  }
+}
+
+@layer base {
+  html {
+    font-size: 14px;
+    color-scheme: light dark;
+  }
+  body {
+    @apply bg-canvas text-fg font-sans text-base;
+  }
+}

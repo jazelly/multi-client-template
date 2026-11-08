@@ -1,0 +1,27 @@
+{
+  "name": "web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/check-design.mjs && tsc -p . && vite build",
+    "check:design": "node scripts/check-design.mjs",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@app/shared": "workspace:*",
+    "lucide-react": "1.57.0",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@agentic-react/vite": "0.3.0",
+    "@tailwindcss/vite": "4.3.3",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "6.0.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "catalog:",
+    "vite": "8.0.16"
+  }
+}

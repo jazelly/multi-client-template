@@ -1,0 +1,11 @@
+{
+  "name": "desktop",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "41.10.7"
+  }
+}

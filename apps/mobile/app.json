@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "App",
+    "slug": "multi-client-template",
+    "scheme": "multiclient",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": { "bundleIdentifier": "com.example.multiclient" },
+    "android": { "package": "com.example.multiclient" },
+    "plugins": ["expo-secure-store", "expo-web-browser"],
+    "web": { "output": "single" }
+  }
+}

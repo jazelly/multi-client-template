@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/@vertile-ai/iac/schema/iac.schema.json",
+  "version": 1,
+  "project": {
+    "key": "multi-client-template",
+    "name": "multi-client-template"
+  },
+  "environments": ["development", "staging", "production"],
+  "providers": {
+    "vercel": {
+      "teamSlug": "your-team",
+      "projectDefaults": { "nodeVersion": "24.x" }
+    }
+  },
+  "apps": [
+    {
+      "key": "web",
+      "name": "multi-client-template-web",
+      "framework": "vite",
+      "rootDirectory": "apps/web",
+      "providers": {
+        "vercel": { "buildCommand": "pnpm build", "outputDirectory": "dist" }
+      }
+    },
+    {
+      "key": "server",
+      "name": "multi-client-template-server",
+      "framework": "hono",
+      "rootDirectory": "apps/server"
+    }
+  ],
+  "env": {
+    "sourceDir": "apps",
+    "environments": {
+      "development": { "files": [".env"], "strict": false },
+      "staging": { "files": [".env.staging"] },
+      "production": { "files": [".env.production"] }
+    }
+  },
+  "databases": [
+    {
+      "key": "main",
+      "provider": "postgres",
+      "local": { "service": "postgres", "composeFile": "docker-compose.yml" }
+    }
+  ]
+}

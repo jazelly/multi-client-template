@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.expo/
+apps/mobile/ios/
+apps/mobile/android/
+.vertile/
+.iac/
+.DS_Store
+*.log
